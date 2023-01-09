@@ -1,14 +1,16 @@
 %导言区
-\documentclass[a4paper]{ctexart}
+\documentclass[hyperref,UTF8]{ctexart}
 
 \usepackage{ctex}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{geometry}
 
+\geometry{a4paper,left=2.7cm,right=2.7cm}
 \title{未定}
 \date{\today}
 
-\newtheorem{theorem}{定理}[section]
+\newtheorem{theorem}{定理}[subsection]
 \newtheorem{definition}{定义}[subsection]
 
 
@@ -22,7 +24,7 @@
 \section{集合}
 	\subsection{基本概念}
 	\begin{definition}
-	集合\ 元素
+	集合\ 元素	
 	
 	指具有某种特定性质的具体的或抽象的对象汇集成的总体，这些对象称为集合的元素
 	
@@ -43,8 +45,8 @@
 	\end{theorem}
 
 \section{映射}
-	\subsection{基本概念}
-		\subsubsection{映射的相关定义}
+
+		\subsection{映射的定义}
 		
 		
 	\begin{definition}
@@ -79,7 +81,7 @@
 		则称$\phi$是从A到B的满射
 	\end{definition}
 
-	\begin{definition}
+    \begin{definition}
 		双射（一一映射）
 		
 		既是单射，又是满射的映射 
@@ -94,8 +96,83 @@
 		
 		则称 $ g\circ f $ 为f与g的复合映射
 	\end{definition}
+
+	\begin{definition}
+		逆映射
+		
+		设$ f:A\to B $和 $ g:B \to A $是两个映射.
+		
+		如果 $ f\circ g = id_B:B\to B\  and\ g\circ f = id_A:A\to A $
+		
+		则称 $ f $与$ g $互为逆映射 
+	\end{definition}
+
+
+	\subsection{映射的定理}
+\begin{theorem}
+	单射的复合是单射；满射的复合是满射；双射的复合是双射
+\end{theorem}
+	\begin{proof}
+	设 $ f:A\to B,g:B\to C,g\circ f $是$f$和$g$的复合映射
+	
+	\item[(1)]$f,g$ 为单射，则对于任意的 $a\neq b \in A$
+	
+	$\Rightarrow f(a_1)\neq  f(a_2)\in B$
+	
+	$\Rightarrow (g\circ f)(a_1)=g(f(a_1)) \neq g(f(a_2))=(g\circ f)(a_2)$
+	\item[(2)]$f,g$ 为满射，则对于任意的 $c\in C$
+	
+	$\exists\  b\in B,s.t. g(b) = c$
+	
+	$\exists\  a\in A,s.t. f(a)= b$
+	
+	所以$c=g(f(a))=(g\circ f)(a)$
+	
+	
+	\item[(3)]  同(1)(2)
+	\end{proof}	
+	
+	
+	
+	\begin{theorem}
+	双射存在唯一的逆映射，且这个逆映射也是双射
+	\end{theorem}
+	
+\begin{proof}
+设 $ f:A\to B $是一个双射
+
+规定$ f^{-1}:B\to A  $为对于任意的$ y = f(x)\in B ,f^{-1}(y)=x$
+
+由于$ f $是一个双射，可以验证$ f^{-1} $ 是一个映射
+
+\begin{itemize}
+	\item 下证$ f^{-1} $是一个双射
+	
+	任意取$ f(x_1)=y_1\neq y_2=f(x_2) $，由于f为单射
+	
+	所以$ f^{-1}(y_1)=x_1 \neq x_2 =f^{-1}(y_2) $
+	
+	所以$ f^{-1} $是单射
+	\\
+	
+	任意取$ x\in A $,由于$ f $是映射
+	
+	所以 存在$ y\in B f^{-1}(y)=x $ 
+	所以$ f^{-1} $是满射
+	
+	所以$ f^{-1} $是双射
+	
+	\item
+	下证 $ f^{-1} $是 $ f $ 的逆映射
+
+\end{itemize} 
+
+\end{proof}
+	
+	
 %代数运算
-		\subsubsection{代数运算}
+\section{代数运算}
+	\subsection{基本概念}
 	\begin{definition}
 	代数运算
 	
@@ -148,9 +225,7 @@
 	
 	
 	\subsection{重点}
-	\begin{theorem}
-		双射存在唯一的逆映射，且这个逆映射也是双射
-	\end{theorem}
+
 	
 
 \end{document}
